@@ -17,7 +17,7 @@ def __rstrip_conversion(data):
 
 
 def __date_conversion(data):
-    return datetime.datetime(int(data[0:4]), int(data[4:6]), int(data[6:8]))
+    return data[6:8]+'-'+data[4:6]+'-'+data[0:4]
 
 
 NO, INT, MONEY, RTRIM, DATE = ([__no_conversion,
