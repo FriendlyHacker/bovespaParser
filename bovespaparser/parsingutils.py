@@ -17,12 +17,38 @@ def __rstrip_conversion(data):
 
 
 def __date_conversion(data):
-    return data[0:4]+'-'+data[4:6]+'-'+data[6:8]
+    month = ""
+    if int(data[4:6]) == 1:
+          month = "Jan"
+    if int(data[4:6]) == 2:
+          month = "Feb"
+    if int(data[4:6]) == 3:
+          month = "Mar"
+    if int(data[4:6]) == 4:
+          month = "Apr"
+    if int(data[4:6]) == 5:
+          month = "May"
+    if int(data[4:6]) == 6:
+          month = "Jun"
+    if int(data[4:6]) == 7:
+          month = "Jul"
+    if int(data[4:6]) == 8:
+          month = "Aug"
+    if int(data[4:6]) == 9:
+          month = "Sep"
+    if int(data[4:6]) == 10:
+          month = "Oct"
+    if int(data[4:6]) == 11:
+          month = "Nov"
+    if int(data[4:6]) == 12:
+          month = "Dec"
+    return data[0:4]+'-'+month+'-'+data[6:8]
 
 
 NO, INT, MONEY, RTRIM, DATE = ([__no_conversion,
                                 int,
-                                __money_conversion,
+         
+                       __money_conversion,
                                 __rstrip_conversion,
                                 __date_conversion])
 
